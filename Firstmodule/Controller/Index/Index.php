@@ -1,23 +1,29 @@
 <?php
 namespace Livia\Firstmodule\Controller\Index;
 
+
+
 use Magento\Framework\App\Action\Context;
-use Magento\Framework\View\Result\PageFactory;
+
+
 
 class Index extends \Magento\Framework\App\Action\Action
 {
     protected $resultPageFactory;
-    public function __construct(
-        Context $context,
-        PageFactory $resultPageFactory
-    )
+
+    public function __construct(Context $context, \Magento\Framework\View\Result\PageFactory $resultPageFactory)
     {
+        $this->_resultPageFactory = $resultPageFactory;
         parent::__construct($context);
-        $this->resultPageFactory = $resultPageFactory;
     }
+    
     public function execute()
     {
-        echo "Livia-Firstmodule";
-        exit;
+
+        $resultPage = $this->_resultPageFactory->create();
+        return $resultPage;
+
+//        echo "Livia-Firstmodule";
+//        exit;
     }
 }
