@@ -16,7 +16,7 @@ class Index extends \Magento\Framework\App\Action\Action
         $this->_resultPageFactory = $resultPageFactory;
         parent::__construct($context);
     }
-    
+
     public function execute()
     {
 
